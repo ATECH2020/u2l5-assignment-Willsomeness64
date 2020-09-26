@@ -7,24 +7,28 @@ public class HowFarAway
         // "I still don't know what I'm doing" - AWOLNATION 
       
       //initializing my variables
-     int startLatitude;
-     int startlongitude;
-     int endLaditude;
-     int endLongitude;
+     Scanner in = new Scanner(System.in);
+
+     double startLatitude;
+     double startlongitude;
+     double endLaditude;
+     double endLongitude;
 
      //Asking the user for inputs for my variables
      System.out.println("Enter the latitude of the starting location:");
-     startLatitude = in.nextInt();
+     startLatitude = in.nextDouble();
      System.out.println("Enter the longitude of the starting location: ");
-     startlongitude = in.nextInt();
+     startlongitude = in.nextDouble();
      System.out.println("Enter the latitude of the ending location: ");
-     endLaditude = in.nextInt();
+     endLaditude = in.nextDouble();
      System.out.println("Enter the longitude of the ending location: ");
-     endLongitude = in.nextInt(); 
+     endLongitude = in.nextDouble(); 
 
     //creating two GeoLocation objects, going to try to use these two objects to calculate the distance. 
-        GeoLocation startLoc = new GeoLocation(startLatitude,startlongitude);
-        GeoLocation endLoc = new GeoLocation(startLatitude,startlongitude);
+        GeoLocation startLocation = new GeoLocation(startLatitude,startlongitude);
+        GeoLocation endLocation = new GeoLocation(startLatitude,startlongitude);
+
+       System.out.println("The distance is " + startLocation.distanceFrom(endLocation) + "miles");
 
     }
 }
